@@ -1,8 +1,5 @@
 # Football Duel ⚽🎮
 
-A chaotic, fast-paced 2-player arcade football game where you use your smartphone as a controller!
-
-![Game Preview](public/static/Gemini_Generated_Image_123rod123rod123r.png)
 
 ## 🕹️ How to Play
 
