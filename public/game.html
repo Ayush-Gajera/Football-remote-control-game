@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Duel - Host</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="ui-layer">
+            <div id="score-board">
+                <div id="p1-score" class="score">0</div>
+                <div class="score-divider">VS</div>
+                <div id="p2-score" class="score">0</div>
+            </div>
+
+            <div id="waiting-screen">
+                <h1>FOOTBALL DUEL</h1>
+                <h3 id="room-id-display">Room: ...</h3>
+                <div class="qr-container">
+                    <div class="player-join-box" id="p1-box">
+                        <h3>Player 1</h3>
+                        <div id="qrcode-p1" class="qr-code"></div>
+                        <p class="status">Waiting...</p>
+                    </div>
+                    <div class="player-join-box" id="p2-box">
+                        <h3>Player 2</h3>
+                        <div id="qrcode-p2" class="qr-code"></div>
+                        <p class="status">Waiting...</p>
+                    </div>
+                </div>
+                <button id="start-btn" disabled>START MATCH</button>
+            </div>
+
+            <div id="goal-overlay">GOAL!</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

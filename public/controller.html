@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Football Duel - Controller</title>
+    <!-- Preload Audio -->
+    <audio id="win-sound" src="/static/videoplayback-1_WxibvMr7.mp3"></audio>
+    <audio id="lose-sound" src="/static/videoplayback_tsY4G29x.mp3"></audio>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body id="controller-body">
+
+    <div id="rotate-message">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M16.48 2.52c3.27 1.55 5.61 4.72 5.97 8.48h1.5C23.44 4.84 18.29 0 12 0l-.66.03 3.81 3.81 1.33-1.32zm-6.24-1.12l-5.71 5.71-1.33-1.33 3.81-3.81-.66-.03C6.36 1.96.2 6.81.04 13h1.5c.36-3.76 2.7-6.93 5.97-8.48L10.24 1.4zM4 17h16v-2H4v2zm13.1 3.9l-3.81-3.81 1.33-1.32 5.71 5.71C22.68 19.16 23.59 16.63 23 14H2.41L5.77 19.58l1.33 1.32z" />
+        </svg>
+        <h3>Please Rotate Your Phone</h3>
+        <p>This game requires landscape mode.</p>
+    </div>
+
+    <div id="start-overlay"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:9999;display:flex;justify-content:center;align-items:center;flex-direction:column;color:white;text-align:center;">
+        <h1>Tap to Start</h1>
+        <p>Enable Controls</p>
+        <button id="enable-btn"
+            style="padding:20px 40px;font-size:1.5rem;background:#2ecc71;border:none;border-radius:10px;color:white;margin-top:20px;">ENABLE</button>
+    </div>
+
+    <div id="controller-overlay">
+        <div id="player-tag-ctrl">P1</div>
+
+        <div id="controls-container">
+            <!-- Left Side: Movement (Left/Right) -->
+            <div class="control-group" id="move-group">
+                <div class="control-btn" id="btn-left" data-type="move" data-val="left">◀</div>
+                <div class="control-btn" id="btn-right" data-type="move" data-val="right">▶</div>
+            </div>
+
+            <!-- Right Side: Actions (Kick, Jump, Air Hit) -->
+            <div class="control-group" id="action-group">
+                <div class="action-btn" id="btn-jump" data-type="action" data-val="jump">JUMP</div>
+                <div class="action-btn" id="btn-kick" data-type="action" data-val="kick">KICK</div>
+                <div class="action-btn" id="btn-air" data-type="action" data-val="air-hit">AIR</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="controller.js"></script>
+</body>
+
+</html>
