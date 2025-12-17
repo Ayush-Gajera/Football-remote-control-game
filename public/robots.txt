@@ -1,0 +1,15 @@
+# General settings for all search engines
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /private/
+Disallow: /config/
+
+# Direct link to your sitemap to help indexing
+Sitemap: https://football-remote-control-game.onrender.com/sitemap.xml
+
+# Prevent AI scrapers from slowing down your game (Optional but recommended)
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
